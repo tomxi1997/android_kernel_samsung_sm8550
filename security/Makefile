@@ -4,7 +4,6 @@
 #
 
 obj-$(CONFIG_KEYS)			+= keys/
-subdir-$(CONFIG_SECURITY_DEFEX)		+= samsung/defex_lsm
 
 # always enable default capabilities
 obj-y					+= commoncap.o
@@ -22,7 +21,6 @@ obj-$(CONFIG_SECURITY_YAMA)		+= yama/
 obj-$(CONFIG_SECURITY_LOADPIN)		+= loadpin/
 obj-$(CONFIG_SECURITY_SAFESETID)       += safesetid/
 obj-$(CONFIG_SECURITY_LOCKDOWN_LSM)	+= lockdown/
-obj-$(CONFIG_SECURITY_DEFEX)		+= samsung/defex_lsm/built-in.a
 obj-$(CONFIG_CGROUPS)			+= device_cgroup.o
 obj-$(CONFIG_BPF_LSM)			+= bpf/
 obj-$(CONFIG_SECURITY_LANDLOCK)		+= landlock/

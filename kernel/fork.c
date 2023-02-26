@@ -119,10 +119,6 @@
 #include <linux/kdp.h>
 #endif
 
-#ifdef CONFIG_SECURITY_DEFEX
-#include <linux/defex.h>
-#endif
-
 #ifdef CONFIG_PROC_FSLOG
 #include <linux/fslog.h>
 #else
@@ -2749,9 +2745,6 @@ pid_t kernel_clone(struct kernel_clone_args *args)
 	pid = get_task_pid(p, PIDTYPE_PID);
 	nr = pid_vnr(pid);
 
-#ifdef CONFIG_SECURITY_DEFEX
-	task_defex_zero_creds(p);
-#endif
 	if (clone_flags & CLONE_PARENT_SETTID)
 		put_user(nr, args->parent_tid);
 
